@@ -9,3 +9,128 @@
 a {
     text-decoration: none;
 }
+
+body {
+    background: #141414;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    position: relative;
+    width: 340px;
+    height: 450px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 170%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(45deg);
+    z-index: 1;
+    transition: 0.8s;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 170%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(45deg);
+    z-index: 1;
+    transition: 0.3s;
+    transition-delay: 0.5s;
+}
+
+.container:hover::before {
+    left: -170%;
+}
+
+.container:hover::after {
+    right: -170%;
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.container:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.2);
+}
+
+.container h2 {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    text-transform: uppercase;
+    width: 90%;
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    transform: translateX(-50%) rotateX(90deg);
+    background: rgba(69, 103, 139, 0.9);
+    color: #fff;
+    transform-origin: bottom;
+    transition: 0.6s;
+    transition-delay: 0.7s;
+}
+
+.container:hover h2 {
+    transform: translateX(-50%) perspective(500px) rotateX(0deg);
+}
+
+.container ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container ul li {
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transform-origin: left;
+    transition: 0.5s;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transform: perspective(1000px) rotateY(90deg);
+}
+
+.container ul li a {
+    color: #141414;
+}
+
+.container:hover ul li {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.container:hover ul li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.container:hover ul li:nth-child(2) {
+    transition-delay: 0.3s;
+}
+.container:hover ul li:nth-child(3) {
+    transition-delay: 0.5s;
+}
