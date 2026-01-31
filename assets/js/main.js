@@ -9,22 +9,17 @@ function spawnSpark() {
 
     let x, y;
 
-    // choose random edge
     if (edge === 0) {
-        // top
         x = Math.random() * r.width;
-        y = 2;
+        y = 3;
     } else if (edge === 1) {
-        // right
-        x = r.width - 2;
+        x = r.width - 10;
         y = Math.random() * r.height;
     } else if (edge === 2) {
-        // bottom
         x = Math.random() * r.width;
-        y = r.height - 2;
+        y = r.height - 10;
     } else {
-        // left
-        x = 2;
+        x = 3;
         y = Math.random() * r.height;
     }
 
